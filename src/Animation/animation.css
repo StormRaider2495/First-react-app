@@ -1,0 +1,24 @@
+.anim-appear {
+    opacity: 0.01;
+}
+
+.anim-appear.anim-appear-active {
+    opacity: 2;
+    transition: opacity 5s ease-in;
+}
+
+.anim-enter {
+    opacity: 0.01;
+}
+
+.anim-enter.anim-enter-active {
+    opacity: 2;
+    transition: opacity 5s ease-in;
+}
+
+.animation-container {
+    margin-bottom: 30px;
+}
+.item-container li {
+    list-style-type: none;
+}
