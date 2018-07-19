@@ -18,11 +18,12 @@ export default class ParentComponent extends Component {
     createChildFixture(data) {
         return (
             <div className='child-container col-sm-4'  key={data.id}>
+                <p className='text-left'>Parent</p>
                 <div>
                     <button id={data.id} className='btn btn-default' onClick={this.updateStatus.bind(this)}>Change Button Status</button>
                     <div>
                         <button id={data.id} className='btn btn-default' onClick={this.increaseClickCounts.bind(this)}>Increase Count</button>
-                        <button id={data.id} className='btn btn-default' onClick={this.decreaseClickCounts.bind(this)}>Decrease Count</button>
+                        <button id={data.id} disabled={data.noOfClicks <= 0} className='btn btn-default' onClick={this.decreaseClickCounts.bind(this)}>Decrease Count</button>
                     </div>
                 </div>
                 <ChildComponent data={data} />
@@ -33,7 +34,7 @@ export default class ParentComponent extends Component {
     updateStatus(event) {
         let index = parseInt(event.target.id,10) - 1;
         let updatedData = this.state.data;
-        updatedData[index].noOfClicks++;
+        // updatedData[index].noOfClicks++;
         updatedData[index].isEnable = !updatedData[index].isEnable ;
         this.setState((prevState) => ({ data: updatedData }))
     }

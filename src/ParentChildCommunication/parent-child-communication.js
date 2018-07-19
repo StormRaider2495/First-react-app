@@ -32,6 +32,7 @@ export default class ParentChildComponent extends Component {
     render() {
         return (
             <div className='container parent-container'>
+                <h2>Parent to Multiple Child component communication</h2>
                 <ParentComponent  data={this.data}/>
             </div>
         )

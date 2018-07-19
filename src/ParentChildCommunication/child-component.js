@@ -12,7 +12,8 @@ export default class ChildComponent extends Component {
       }
     render() {
         return (
-            <div className='inChild-button-container container-fluid'>
+            <div className='inChild-container container-fluid'>
+                <p className='text-left'>Child</p>
                 <p>isDisable: {`${this.data.isEnable} `}</p>
                 <button className={`btn btn-${this.data.class}`} disabled={!this.data.isEnable}>{this.data.text}</button>
                 <p>noOfClicks:  {this.data.noOfClicks}</p>
